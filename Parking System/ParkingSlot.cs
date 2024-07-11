@@ -68,7 +68,9 @@ namespace Parking_System
         {
             foreach (var res in this.ReservationsQueue)
             {
-                if ((dateOfResStart >= res.DateStart && dateOfResStart <= res.DateEnd) || (dateOfResEnd >= res.DateStart && dateOfResEnd <= res.DateEnd))
+                if ((dateOfResStart >= res.DateStart && dateOfResStart <= res.DateEnd) || 
+                    (dateOfResEnd >= res.DateStart && dateOfResEnd <= res.DateEnd) ||
+                    (dateOfResStart <= res.DateStart && dateOfResEnd >= res.DateEnd))
                 {
                     Console.WriteLine("Паркомястото е вече заето за тези дати.");
                     return false;
